@@ -13,3 +13,13 @@ img{
     height:20vh;
     display: block;
 }
+
+#goods{
+
+    display: grid;
+    grid-template-areas: 
+    "coke pie lollipop"
+    "snacks juice sandwich"
+    "cookies ice-cream chocolate";
+    grid-gap: 2px;
+}
