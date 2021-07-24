@@ -10,7 +10,7 @@
 img{
 
     width:10vw;
-    height:20vh;
+    height:15vh;
     display: block;
 }
 
@@ -21,7 +21,8 @@ img{
     "coke pie lollipop"
     "snacks juice sandwich"
     "cookies ice-cream choco";
-    grid-gap: 1px;
+    row-gap: 5px;
+    column-gap: 5px;
     width: 50%;
     margin:auto;
 }
@@ -69,4 +70,12 @@ img{
 #item9{
 
     grid-area: choco;
+}
+
+.items{
+    border: 1px solid gray;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
