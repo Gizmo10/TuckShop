@@ -20,6 +20,53 @@ img{
     grid-template-areas: 
     "coke pie lollipop"
     "snacks juice sandwich"
-    "cookies ice-cream chocolate";
-    grid-gap: 2px;
+    "cookies ice-cream choco";
+    grid-gap: 1px;
+    width: 50%;
+    margin:auto;
+}
+
+#item1{
+
+    grid-area: coke;
+}
+
+#item2{
+
+    grid-area: pie;
+}
+
+#item3{
+
+    grid-area: lollipop;
+}
+
+#item4{
+
+    grid-area: snacks;
+}
+
+#item5{
+    
+    grid-area: juice;
+}
+
+#item6{
+
+    grid-area: sandwich;
+}
+
+#item7{
+
+    grid-area:cookies;
+}
+
+#item8{
+
+    grid-area: ice-cream;
+}
+
+#item9{
+
+    grid-area: choco;
 }
