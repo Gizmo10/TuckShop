@@ -1,0 +1,81 @@
+#appTitle{
+    width: 100vw;
+    height: 10vh;
+    background-color:blue;
+    color: black;
+    border: 1px solid gray;
+    text-align: center;
+}
+
+img{
+
+    width:10vw;
+    height:15vh;
+    display: block;
+}
+
+#goods{
+
+    display: grid;
+    grid-template-areas: 
+    "coke pie lollipop"
+    "snacks juice sandwich"
+    "cookies ice-cream choco";
+    row-gap: 5px;
+    column-gap: 5px;
+    width: 50%;
+    margin:auto;
+}
+
+#item1{
+
+    grid-area: coke;
+}
+
+#item2{
+
+    grid-area: pie;
+}
+
+#item3{
+
+    grid-area: lollipop;
+}
+
+#item4{
+
+    grid-area: snacks;
+}
+
+#item5{
+    
+    grid-area: juice;
+}
+
+#item6{
+
+    grid-area: sandwich;
+}
+
+#item7{
+
+    grid-area:cookies;
+}
+
+#item8{
+
+    grid-area: ice-cream;
+}
+
+#item9{
+
+    grid-area: choco;
+}
+
+.items{
+    border: 1px solid gray;
+    width: 10vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
