@@ -110,7 +110,24 @@ img{
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
-    text-align: center;
     z-index: 1;
     background-color: lightblue;
+}
+
+h2{
+    text-align: center;
+}
+
+#tallyList{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+#orderedList{
+
+    width: 50%;
+    margin: auto;
 }
