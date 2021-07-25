@@ -1,4 +1,5 @@
-
+//Target all DIV from class = price and store in array called PRICES
+const PRICES = document.getElementsByClassName("price");
 
 
 /*The items sold at the tuck shop will be represented by objects
