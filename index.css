@@ -97,3 +97,17 @@ img{
     justify-content: flex-start;
     text-align: center;
 }
+
+#shoppingList{
+
+    border: 1px solid black;
+    width: 50%;
+    margin: auto;
+    position: relative;
+    bottom: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    text-align: center;
+}
