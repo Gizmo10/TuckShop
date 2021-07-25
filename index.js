@@ -1,6 +1,7 @@
 //Target all DIV from class = price and store in array called PRICES
 const PRICES = document.getElementsByClassName("price");
-
+//Target all the ADD TO LIST buttons for items
+const ADD_TO_LIST_BUTTONS = document.getElementsByClassName("addItem");
 
 /*The items sold at the tuck shop will be represented by objects
 which have properties: name, price and quantity for each product*/
@@ -58,3 +59,6 @@ const CHOCOLATE={
     price: 7.50,
     quantity: 4
 };
+
+/*When the app starts up we want the prices to be set accordingly
+for all the products in the shop*/
