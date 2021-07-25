@@ -40,3 +40,20 @@ const SANDWICH={
     quantity: 3
 };
 
+const COOKIES={
+    name: "Cookies",
+    price: 3.50,
+    quantity: 7
+};
+
+const ICE_CREAM={
+    name: "IceCream",
+    price: 5.00,
+    quantity: 6
+};
+
+const CHOCOLATE={
+    name: "Chocolate",
+    price: 7.50,
+    quantity: 4
+};
