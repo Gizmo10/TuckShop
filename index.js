@@ -60,5 +60,12 @@ const CHOCOLATE={
     quantity: 4
 };
 
+/*Store all objects in an array*/
+const STOCK = [COKE,PIE,LOLLIPOP,SNACKS,JUICE,SANDWICH,COOKIES,ICE_CREAM,CHOCOLATE];
+
+
 /*When the app starts up we want the prices to be set accordingly
 for all the products in the shop*/
+for(let i = 0; i < PRICES.length;i++){
+    PRICES[i].innerHTML = "R " + STOCK[i]["price"];
+ }
