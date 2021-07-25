@@ -42,6 +42,7 @@ img{
     column-gap: 5px;
     width: 50%;
     margin:auto;
+    z-index: 0;
 }
 
 #item1{
@@ -110,4 +111,6 @@ img{
     justify-content: flex-start;
     flex-wrap: wrap;
     text-align: center;
+    z-index: 1;
+    background-color: lightblue;
 }
