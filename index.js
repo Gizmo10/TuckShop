@@ -2,6 +2,22 @@
 const PRICES = document.getElementsByClassName("price");
 //Target all the ADD TO LIST buttons for items
 const ADD_TO_LIST_BUTTONS = document.getElementsByClassName("addItem");
+/*Target the cart which will display items added to list
+and allow us to close the shopping list and view it
+before we can checkout*/
+const VIEW_CART = document.getElementById("viewCart");
+//Target the modal which displays shopping list
+const MODAL = document.getElementById("shoppingList");
+//Target the actual list we want to populate
+const SHOPPING_LIST = document.getElementById("list");
+//Target the checkout button to complete shopping
+const CHECKOUT_BUTTON = document.getElementById("checkout");
+//Target the input for displaying total of all items
+const TOTAL = document.getElementById("total");
+//Will track be used to set the element total
+let totalCost = 0;
+//Keeps count of items in shopping list
+let numberOfItems = 0;
 
 /*The items sold at the tuck shop will be represented by objects
 which have properties: name, price and quantity for each product*/
@@ -69,3 +85,100 @@ for all the products in the shop*/
 for(let i = 0; i < PRICES.length;i++){
     PRICES[i].innerHTML = "R " + STOCK[i]["price"];
  }
+
+ /*When the VIEW_CART is clicked, we want to view the shoppinglist 
+ or close it f it was already open */
+VIEW_CART.onclick = ()=>{
+
+    if(MODAL.style.display === "none"){
+
+        MODAL.style.display = "flex";
+    }else{
+
+        MODAL.style.display = "none";
+    }
+} 
+
+/*When we click on any of the ADD TO LIST buttons
+we must test if the item is available and update
+number of items in list if it is available, update
+total cost and append item to list.
+Else, report the item is not available*/
+for(let i = 0;i < STOCK.length;i++){
+
+    //When button is clicked
+    ADD_TO_LIST_BUTTONS[i].onclick  = ()=>{
+        //Test the item selected is in stock
+        if(STOCK[i]["quantity"] > 0){
+            //call method to append item to list
+            addToShoppingList(i);
+            //update total cost
+            increaseTotalCost(i);
+            //update number of items in list
+            incrementNumberOfItems(i);
+            //reduce stock
+            STOCK[i]["quantity"] -= 1;
+        }else{
+            //If there is no item in stock
+            PRICES[i].innerHTML = "OUT OF STOCK.";
+        }
+    }
+}
+
+//Adds an item to the list
+const addToShoppingList = (index)=>{
+    //create element to append to list
+    let listElem = document.createElement("li");
+    let text = document.createTextNode(STOCK[index]["name"] + " R" + STOCK[index]["price"]);
+    listElem.appendChild(text);
+
+    //create a delete button and append to listElem
+    let deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'x';
+    listElem.appendChild(deleteButton);
+
+    //append to shopping list
+    SHOPPING_LIST.appendChild(listElem);
+
+    //When the delete button is clicked remove child decrement items on list and reduce total
+    deleteButton.onclick = ()=>{
+
+        SHOPPING_LIST.removeChild(listElem);
+        reduceTotalCost(index);
+        decrementListItems();
+        //increase stock
+        STOCK[index]["quantity"] += 1;
+        //reset to price value if it was set to OUT OF STOCK
+        if(PRICES[index].innerHTML === "OUT OF STOCK."){
+            PRICES[index].innerHTML = STOCK[index]["price"];
+        }
+    }
+}
+
+//Increases the totalCost
+const increaseTotalCost = (index)=>{
+
+    totalCost += STOCK[index]["price"];
+    TOTAL.value = totalCost;
+}
+
+//Increases number of items in the list
+const incrementNumberOfItems = (index)=>{
+
+    numberOfItems ++;
+    VIEW_CART.innerHTML = numberOfItems;
+}
+
+//Reduce the totalCost when an item is removed from list
+const reduceTotalCost = (index)=>{
+
+    totalCost -= STOCK[index]["price"];
+    TOTAL.value = totalCost;
+}
+
+//Decrements the number of list items when item is removed
+const decrementListItems = ()=>{
+
+   numberOfItems -= 1;
+   VIEW_CART.innerHTML = numberOfItems;
+}
