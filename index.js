@@ -104,4 +104,33 @@ we must test if the item is available and update
 number of items in list if it is available, update
 total cost and append item to list.
 Else, report the item is not available*/
+for(let i = 0;i < STOCK.length;i++){
+
+    //When button is clicked
+    ADD_TO_LIST_BUTTONS[i].onclick  = ()=>{
+        //Test the item selected is in stock
+        if(STOCK[i]["quantity"] > 0){
+            //call method to append item to list
+            addToShoppingList(i);
+        }
+    }
+}
+
+//Adds an item to the list
+const addToShoppingList = (index)=>{
+    //create element to append to list
+    let listElem = document.createElement("li");
+    let text = document.createTextNode(STOCK[index]["name"] + " R" + STOCK[index]["price"]);
+    listElem.appendChild(text);
+
+    //create a delete button and append to listElem
+    let deleteButton = document.createElement('button');
+    deleteButton.innerHTML = 'x';
+    listElem.appendChild(deleteButton);
+
+    //append to shopping list
+    SHOPPING_LIST.appendChild(listElem);
+
+    //When the delete button is clicked
     
+}
