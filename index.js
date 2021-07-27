@@ -6,6 +6,8 @@ const ADD_TO_LIST_BUTTONS = document.getElementsByClassName("addItem");
 and allow us to close the shopping list and view it
 before we can checkout*/
 const VIEW_CART = document.getElementById("viewCart");
+//Target the modal which displays shopping list
+const MODAL = document.getElementById("shoppingList");
 //Target the actual list we want to populate
 const SHOPPING_LIST = document.getElementById("list");
 //Target the checkout button to complete shopping
@@ -83,3 +85,16 @@ for all the products in the shop*/
 for(let i = 0; i < PRICES.length;i++){
     PRICES[i].innerHTML = "R " + STOCK[i]["price"];
  }
+
+ /*When the VIEW_CART is clicked, we want to view the shoppinglist 
+ or close it f it was already open*/
+VIEW_CART.onclick = ()=>{
+
+    if(MODAL.style.display === "none"){
+
+        MODAL.style.display = "flex";
+    }else{
+
+        MODAL.style.display = "none";
+    }
+}

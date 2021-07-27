@@ -106,12 +106,13 @@ img{
     margin: auto;
     position: relative;
     bottom: 70vh;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     flex-wrap: wrap;
     z-index: 1;
     background-color: lightblue;
+    
 }
 
 h2{
