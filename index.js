@@ -131,6 +131,9 @@ const addToShoppingList = (index)=>{
     //append to shopping list
     SHOPPING_LIST.appendChild(listElem);
 
-    //When the delete button is clicked
-    
+    //When the delete button is clicked remove child decrement items on list and reduce total
+    deleteButton.onclick = ()=>{
+
+        SHOPPING_LIST.removeChild(listElem);
+    }
 }
