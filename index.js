@@ -2,6 +2,17 @@
 const PRICES = document.getElementsByClassName("price");
 //Target all the ADD TO LIST buttons for items
 const ADD_TO_LIST_BUTTONS = document.getElementsByClassName("addItem");
+/*Target the cart which will display items added to list
+and allow us to close the shopping list and view it
+before we can checkout*/
+const VIEW_CART = document.getElementById("viewCart");
+//Target the actual list we want to populate
+const SHOPPING_LIST = document.getElementById("list");
+//Target the checkout button to complete shopping
+const CHECKOUT_BUTTON = document.getElementById("checkout");
+//Target the input for displaying total of all items
+const TOTAL = document.getElementById("total");
+
 
 /*The items sold at the tuck shop will be represented by objects
 which have properties: name, price and quantity for each product*/
