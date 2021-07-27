@@ -140,6 +140,7 @@ const addToShoppingList = (index)=>{
 
         SHOPPING_LIST.removeChild(listElem);
         reduceTotalCost(index);
+        decrementListItems();
     }
 }
 
@@ -162,4 +163,11 @@ const reduceTotalCost = (index)=>{
 
     totalCost -= STOCK[index]["price"];
     TOTAL.value = totalCost;
+}
+
+//Decrements the number of list items when item is removed
+const decrementListItems = ()=>{
+
+   numberOfItems -= 1;
+   VIEW_CART.innerHTML = numberOfItems;
 }
