@@ -112,6 +112,10 @@ for(let i = 0;i < STOCK.length;i++){
         if(STOCK[i]["quantity"] > 0){
             //call method to append item to list
             addToShoppingList(i);
+            //update total cost
+            increaseTotalCost(i);
+            //update number of items in list
+            incrementNumberOfItems(i);
         }
     }
 }
@@ -136,4 +140,18 @@ const addToShoppingList = (index)=>{
 
         SHOPPING_LIST.removeChild(listElem);
     }
+}
+
+//Increases the totalCost
+const increaseTotalCost = (index)=>{
+
+    totalCost += STOCK[index]["price"];
+    TOTAL.value = totalCost;
+}
+
+//Increases number of items in the list
+const incrementNumberOfItems = (index)=>{
+
+    numberOfItems ++;
+    VIEW_CART.innerHTML = numberOfItems;
 }
