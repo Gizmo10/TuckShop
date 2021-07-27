@@ -12,7 +12,10 @@ const SHOPPING_LIST = document.getElementById("list");
 const CHECKOUT_BUTTON = document.getElementById("checkout");
 //Target the input for displaying total of all items
 const TOTAL = document.getElementById("total");
-
+//Will track be used to set the element total
+let totalCost = 0;
+//Keeps count of items in shopping list
+let numberOfItems = 0;
 
 /*The items sold at the tuck shop will be represented by objects
 which have properties: name, price and quantity for each product*/
