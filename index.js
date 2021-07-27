@@ -87,7 +87,7 @@ for(let i = 0; i < PRICES.length;i++){
  }
 
  /*When the VIEW_CART is clicked, we want to view the shoppinglist 
- or close it f it was already open*/
+ or close it f it was already open */
 VIEW_CART.onclick = ()=>{
 
     if(MODAL.style.display === "none"){
@@ -97,4 +97,29 @@ VIEW_CART.onclick = ()=>{
 
         MODAL.style.display = "none";
     }
+} 
+
+/*When we click on any of the ADD TO LIST buttons
+we must test if the item is available and update
+number of items in list if it is available, update
+total cost and append item to list.
+Else, report the item is not available*/
+    ADD_TO_LIST_BUTTONS[0].onclick = ()=>{
+
+        //If the item is not sold out
+        if(STOCK[0]["quantity"] > 0){
+            //calls method to add item to list
+            appendItemToList(0);
+        }
+    }
+//Appends a selected item to the shopping list
+const appendItemToList = (index)=>{
+   
+    let listElement = document.createElement('li');
+    let listItem = STOCK[index]["name"] + " " + STOCK[index]["price"];
+    //append the item to the li
+    listElement.appendChild(listItem);
+    //add to list
+    SHOPPING_LIST.appendChild(listItem);
+
 }
