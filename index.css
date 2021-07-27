@@ -12,13 +12,13 @@
     position: absolute;
     background-color: white;
     color: black;
-    width: 2vw;
+    width: 3vw;
     height: 6vh;
     border: 1px solid black;
     border-radius: 50%;
     text-align: center;
     top: 10px;
-    right: 20px;
+    right: 30px;
 
 }
 
