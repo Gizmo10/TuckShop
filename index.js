@@ -116,6 +116,11 @@ for(let i = 0;i < STOCK.length;i++){
             increaseTotalCost(i);
             //update number of items in list
             incrementNumberOfItems(i);
+            //reduce stock
+            STOCK[i]["quantity"] -= 1;
+        }else{
+            //If there is no item in stock
+            PRICES[i].innerHTML = "OUT OF STOCK.";
         }
     }
 }
@@ -141,6 +146,12 @@ const addToShoppingList = (index)=>{
         SHOPPING_LIST.removeChild(listElem);
         reduceTotalCost(index);
         decrementListItems();
+        //increase stock
+        STOCK[index]["quantity"] += 1;
+        //reset to price value if it was set to OUT OF STOCK
+        if(PRICES[index].innerHTML === "OUT OF STOCK."){
+            PRICES[index].innerHTML = STOCK[index]["price"];
+        }
     }
 }
 
