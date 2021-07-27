@@ -139,6 +139,7 @@ const addToShoppingList = (index)=>{
     deleteButton.onclick = ()=>{
 
         SHOPPING_LIST.removeChild(listElem);
+        reduceTotalCost(index);
     }
 }
 
@@ -154,4 +155,11 @@ const incrementNumberOfItems = (index)=>{
 
     numberOfItems ++;
     VIEW_CART.innerHTML = numberOfItems;
+}
+
+//Reduce the totalCost when an item is removed from list
+const reduceTotalCost = (index)=>{
+
+    totalCost -= STOCK[index]["price"];
+    TOTAL.value = totalCost;
 }
