@@ -157,7 +157,15 @@ const addToShoppingList = (index)=>{
 
 /*When checkout is clicked, the program must clear shopping list,
 set items in list to zero and total to zero.*/
+CHECKOUT_BUTTON.onclick = ()=>{
+    //clear the list if items are added
+    if(numberOfItems > 0){
 
+        totalCost = 0;
+        numberOfItems = 0;
+        
+    }
+}
 //Increases the totalCost
 const increaseTotalCost = (index)=>{
 
