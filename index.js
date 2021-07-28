@@ -166,6 +166,9 @@ CHECKOUT_BUTTON.onclick = ()=>{
         //number of items set to zero
         numberOfItems = 0;
         VIEW_CART.innerHTML = numberOfItems;
+
+        //Set the display of modal to none, shopping is done
+        MODAL.style.display = 'none';
         
     }
 }
