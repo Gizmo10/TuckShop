@@ -153,11 +153,14 @@ const addToShoppingList = (index)=>{
             PRICES[index].innerHTML = STOCK[index]["price"];
         }
     }
+
+    //When the checkout button is clicked
+    CHECKOUT_BUTTON.onclick = ()=>{updateAfterCheckout()};
 }
 
 /*When checkout is clicked, the program must clear shopping list,
 set items in list to zero and total to zero.*/
-CHECKOUT_BUTTON.onclick = ()=>{
+updateAfterCheckout = ()=>{
     //clear the list if items are added
     if(numberOfItems > 0){
         //set cost to zero
