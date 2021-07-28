@@ -161,22 +161,24 @@ set items in list to zero and total to zero.*/
 CHECKOUT_BUTTON.onclick = ()=>{
     //clear the list if items are added
     if(numberOfItems > 0){
-
+    
         //set cost to zero
         totalCost = 0;
         TOTAL.value = totalCost;
 
         //number of items set to zero
         numberOfItems = 0;
-        VIEW_CART.innerHTML = numberOfItems;
+        VIEW_CART.innerHTML = numberOfItems; 
         
         //Get the children of the list and remove them
         const listChildren = SHOPPING_LIST.children;
 
-        for(let i = 0;i < listChildren.length;++i){
-
-            SHOPPING_LIST.removeChild(listChildren[i]);
-        }
+        for(let i = 0;i < listChildren.length; i ++){
+           
+         //To be fixed
+          SHOPPING_LIST.removeChild(listChildren[i]);
+        
+        }    
         
     }
 }
