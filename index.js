@@ -154,13 +154,11 @@ const addToShoppingList = (index)=>{
         }
     }
 
-    //When the checkout button is clicked
-    CHECKOUT_BUTTON.onclick = ()=>{updateAfterCheckout()};
 }
 
 /*When checkout is clicked, the program must clear shopping list,
 set items in list to zero and total to zero.*/
-updateAfterCheckout = ()=>{
+CHECKOUT_BUTTON.onclick = ()=>{
     //clear the list if items are added
     if(numberOfItems > 0){
 
@@ -172,8 +170,13 @@ updateAfterCheckout = ()=>{
         numberOfItems = 0;
         VIEW_CART.innerHTML = numberOfItems;
         
-        //Set the display of modal to none, shopping is done
-        MODAL.style.display = 'none';
+        //Get the children of the list and remove them
+        const listChildren = SHOPPING_LIST.children;
+
+        for(let i = 0;i < listChildren.length;++i){
+
+            SHOPPING_LIST.removeChild(listChildren[i]);
+        }
         
     }
 }
