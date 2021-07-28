@@ -155,6 +155,9 @@ const addToShoppingList = (index)=>{
     }
 }
 
+/*When checkout is clicked, the program must clear shopping list,
+set items in list to zero and total to zero.*/
+
 //Increases the totalCost
 const increaseTotalCost = (index)=>{
 
